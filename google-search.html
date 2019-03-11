@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entity Resolution</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="google-search.css" rel="stylesheet" type="text/css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+
+</head>
+<body >
+
+<div class="container">
+	<div class="col-md-12 ct-content" id="searchForm">
+                        
+	
+			<div class="row">
+				<div class="col-md-12">
+					<input id="firstName" name="firstName" class="search-page-search" placeholder="First Name" value="">
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<input id="secondName" name="secondName" class="search-page-search" placeholder="Second Name" value="">
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<input id="organisation" name="Organisation" class="search-page-search" placeholder="Organisation" value="">
+				</div>				
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<input id="location" name="Location" class="search-page-search" placeholder="Location" value="">
+				</div>				
+			</div>
+			<div class="row mt-3">
+				<div class="col-md-12">
+					<input id="submit" type="submit" class="search-page-search-submit" value="Search">
+				</div>
+			</div>
+		<div id="searchResult"></div>
+		<div id="output"></div>
+		<div class="pager_controls">
+			<p>
+				<button id="lnkPrev" title="Display previous result page" style="display:none;">Previous</button> <button  id="lnkNext" title="Display next result page" style="display:none;">Next</button>
+			</p>
+		</div>
+		
+		<script type="text/javascript">
+			var mGoogleApiKey = "AIzaSyBMlTMk7hcSR5OM2LE4lkOdMRuuzp4NG9w";
+			var mGoogleCustomSearchKey = "003316574838883214918:h72g-_0jsvi";
+		</script> 
+		<script src="search-script.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$('#submit').click(function(){
+				
+				let searchQuery = `"${$('#firstName').val()}" "${$('#secondName').val()}" "${$('#organisation').val()}" "${$('#location').val()}"`;
+				Search(searchQuery,0);
+			})
+			
+		</script>
+						
+    </div>
+</div>	
+
+</body>
+</html>
